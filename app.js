@@ -1,16 +1,14 @@
-// Init Github class
+// Init Github
 const github = new Github();
-
-//Init UI class
+// Init UI
 const ui = new UI();
 
 // Search input
-const searchUser = document.querySelector("#searchUser");
+const searchUser = document.getElementById("searchUser");
 
-//Search input event listener
-
+// Search input event listener
 searchUser.addEventListener("keyup", (e) => {
-  //Get input text
+  // Get input text
   const userText = e.target.value;
 
   if (userText !== "") {
@@ -22,6 +20,7 @@ searchUser.addEventListener("keyup", (e) => {
       } else {
         // Show profile
         ui.showProfile(data.profile);
+        ui.showRepos(data.repos);
       }
     });
   } else {
